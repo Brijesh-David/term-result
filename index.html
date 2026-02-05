@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="gu">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Marksheet Pro - Final Polished</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 20px;
             background: #f0f2f5;
         }
@@ -57,6 +61,7 @@
             background: #f8f9fa;
             padding: 15px;
             border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         button {
@@ -68,22 +73,9 @@
             transition: 0.2s;
         }
 
-        .btn-load {
-            background: #333;
-            color: white;
-        }
-
-        .btn-view {
-            background: #1a73e8;
-            color: white;
-            display: none;
-        }
-
-        .btn-download {
-            background: #34a853;
-            color: white;
-            display: none;
-        }
+        .btn-load { background: #333; color: white; }
+        .btn-view { background: #1a73e8; color: white; display: none; }
+        .btn-download { background: #34a853; color: white; display: none; }
 
         #status-tick {
             display: none;
@@ -91,11 +83,26 @@
             font-size: 20px;
         }
 
+        /* Branding Image Above PDF */
+        .logo-signature-container {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px 0;
+            border-top: 2px solid #f0f2f5;
+        }
+
+        .logo-signature-container img {
+            max-width: 80%;
+            height: auto;
+        }
+
         #preview-container {
-            margin-top: 20px;
-            height: 700px;
+            height: 750px;
             display: none;
-            border: 1px solid #eee;
+            border: 2px solid #1a73e8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         iframe {
@@ -103,20 +110,30 @@
             height: 100%;
             border: none;
         }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 13px;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="app-container">
-        <h2 style="margin-top:0; color: #1a73e8;">Academic Marksheet Pro</h2>
+        <h2 style="margin-top:0; color: #1a73e8; display: flex; align-items: center; gap: 10px;">
+            <img src="favicon.png" style="height: 24px;"> Academic Marksheet Pro
+        </h2>
+        
         <div class="setup-grid">
-            <div class="field"><label>School Name</label><input type="text" id="school"
-                    value="St. Mary's Higher Secondary School"></div>
+            <div class="field"><label>School Name</label><input type="text" id="school" value="St. Mary's Higher Secondary School"></div>
             <div class="field"><label>Exam Name</label><input type="text" id="exam" value="Second Terminal Exam"></div>
             <div class="field"><label>Class</label><input type="text" id="className" value="10-B"></div>
             <div class="field"><label>Month - Year</label><input type="text" id="dateInput" value="March - 2026"></div>
-            <div class="field"><label>Max Marks</label><input type="number" id="maxM" value="50"></div>
+            <div class="field"><label>Max Marks</label><input type="number" id="maxM" value="80"></div>
         </div>
 
         <div class="toolbar">
@@ -127,8 +144,17 @@
             <button id="viewBtn" class="btn-view" onclick="updatePreview()">View PDF</button>
             <button id="downloadBtn" class="btn-download" onclick="downloadPDF()">Download PDF</button>
         </div>
-        <div id="preview-container"><iframe id="pdfPreview"></iframe></div>
+
+        <div id="preview-container">
+            <iframe id="pdfPreview"></iframe>
+        </div>
     </div>
+
+    <footer>
+        <div class="logo-signature-container">
+            <img src="logo bottom.png" alt="B ✦ Gemini Collaboration Signature">
+        </div>
+    </footer>
 
     <script src="getresult.js"></script>
 </body>
