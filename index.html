@@ -35,10 +35,7 @@
             margin-bottom: 20px;
         }
 
-        .field {
-            display: flex;
-            flex-direction: column;
-        }
+        .field { display: flex; flex-direction: column; }
 
         label {
             font-size: 10px;
@@ -77,22 +74,18 @@
         .btn-view { background: #1a73e8; color: white; display: none; }
         .btn-download { background: #34a853; color: white; display: none; }
 
-        #status-tick {
-            display: none;
-            color: #34a853;
-            font-size: 20px;
-        }
+        #status-tick { display: none; color: #34a853; font-size: 20px; }
 
-        /* Branding Image Above PDF */
-        .logo-signature-container {
+        /* Branding Signature Above PDF */
+        .preview-header-brand {
             text-align: center;
-            margin-top: 25px;
-            padding: 15px 0;
-            border-top: 2px solid #f0f2f5;
+            padding: 20px 0;
+            margin-top: 10px;
+            border-top: 1px solid #eee;
         }
 
-        .logo-signature-container img {
-            max-width: 80%;
+        .preview-header-brand img {
+            max-width: 90%;
             height: auto;
         }
 
@@ -105,18 +98,13 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        iframe { width: 100%; height: 100%; border: none; }
 
         footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 30px;
+            padding: 10px;
             color: #7f8c8d;
-            font-size: 13px;
         }
     </style>
 </head>
@@ -125,7 +113,7 @@
 
     <div class="app-container">
         <h2 style="margin-top:0; color: #1a73e8; display: flex; align-items: center; gap: 10px;">
-            <img src="favicon.png" style="height: 24px;"> Academic Marksheet Pro
+            <img src="favicon.png" style="height: 28px;"> Academic Marksheet Pro
         </h2>
         
         <div class="setup-grid">
@@ -136,13 +124,18 @@
             <div class="field"><label>Max Marks</label><input type="number" id="maxM" value="80"></div>
         </div>
 
-        <div class="toolbar">
-            <input type="file" id="excelFile" hidden accept=".xlsx, .xls, .csv, .ods">
-            <button class="btn-load" onclick="document.getElementById('excelFile').click()">Load Excel</button>
-            <span id="fileName">No file selected</span>
-            <span id="status-tick">✔</span>
-            <button id="viewBtn" class="btn-view" onclick="updatePreview()">View PDF</button>
-            <button id="downloadBtn" class="btn-download" onclick="downloadPDF()">Download PDF</button>
+	<div class="toolbar">
+    		<button class="btn-load" style="background: #555;" onclick="showInstructions()">સુચનાઓ / Help</button>
+    		<input type="file" id="excelFile" hidden accept=".xlsx, .xls, .csv, .ods">
+    		<button class="btn-load" onclick="document.getElementById('excelFile').click()">Load Excel</button>
+    		<span id="fileName">No file selected</span>
+    		<span id="status-tick">✔</span>
+    		<button id="viewBtn" class="btn-view" onclick="updatePreview()">View PDF</button>
+    		<button id="downloadBtn" class="btn-download" onclick="downloadPDF()">Download PDF</button>
+	</div>
+
+        <div class="preview-header-brand">
+            <img src="logo bottom.png" alt="B ✦ Gemini Collaboration Signature">
         </div>
 
         <div id="preview-container">
@@ -151,9 +144,8 @@
     </div>
 
     <footer>
-        <div class="logo-signature-container">
-            <img src="logo bottom.png" alt="B ✦ Gemini Collaboration Signature">
-        </div>
+        <p style="font-size: 13px; font-style: italic;">Precision for the Classroom, Time for the Teacher.</p>
+        <p style="font-size: 14px; font-weight: bold; color: #2c3e50;">"શિક્ષકોના સમયનું સન્માન, પરિણામમાં ચોકસાઈનું પ્રમાણ"</p>
     </footer>
 
     <script src="getresult.js"></script>
