@@ -11,6 +11,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js" crossorigin="anonymous"></script>
+    <script src="getresult.js"></script>
+    <script src="config.js"></script>
+
+    <script>
+        function openHelp() {
+            document.getElementById('helpModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevents background from scrolling
+        }
+
+        function closeHelpModal() {
+            document.getElementById('helpModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restores background scrolling
+        }
+
+        // Auto-pop the Help image on startup
+        window.addEventListener('DOMContentLoaded', (event) => {
+            setTimeout(openHelp, 1000);
+        });
+    </script>
+
+    <script>
+        function openHelp() { document.getElementById('helpModal').style.display = 'block'; }
+        function openAbout() { document.getElementById('aboutModal').style.display = 'block'; }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 
     <style>
         body {
@@ -261,40 +290,11 @@
             પ્રમાણ"</p>
     </footer>
 
-    <script src="getresult.js"></script>
-    <script src="config.js"></script>
-
-    <script>
-        function openHelp() {
-            document.getElementById('helpModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevents background from scrolling
-        }
-
-        function closeHelpModal() {
-            document.getElementById('helpModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restores background scrolling
-        }
-
-        // Auto-pop the Help image on startup
-        window.addEventListener('DOMContentLoaded', (event) => {
-            setTimeout(openHelp, 1000);
-        });
-    </script>
-
-    <script>
-        function openHelp() { document.getElementById('helpModal').style.display = 'block'; }
-        function openAbout() { document.getElementById('aboutModal').style.display = 'block'; }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    </script>
-
 </body>
 
 
 </html>
+
 
 
 
