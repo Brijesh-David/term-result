@@ -4,42 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Marksheet Pro</title>
+    <title>Academic Marksheet Pro - Final Polished</title>
 
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js" crossorigin="anonymous"></script>
-    <script src="lib/getresult.js"></script>
-    <script src="config.js"></script>
-
-    <script>
-        function openHelp() {
-            document.getElementById('helpModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevents background from scrolling
-        }
-
-        function closeHelpModal() {
-            document.getElementById('helpModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restores background scrolling
-        }
-
-        // Auto-pop the Help image on startup
-        window.addEventListener('DOMContentLoaded', (event) => {
-            setTimeout(openHelp, 1000);
-        });
-    </script>
-
-    <script>
-        function openHelp() { document.getElementById('helpModal').style.display = 'block'; }
-        function openAbout() { document.getElementById('aboutModal').style.display = 'block'; }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
     <style>
         body {
@@ -242,7 +213,7 @@
         <div class="toolbar">
             <button class="btn-load" style="background: #555;" onclick="showInstructions()">સુચનાઓ / Help</button>
             <input type="file" id="excelFile" hidden accept=".xlsx, .xls, .csv, .ods">
-            <button class="btn-load" onclick="document.getElementById('excelFile').click()">Load Excel</button>
+            <button class="btn-load" onclick="document.getElementById('excelFile').click()">Load Worksheet</button>
             <span id="fileName">No file selected</span>
             <span id="status-tick">✔</span>
             <button id="viewBtn" class="btn-view" onclick="updatePreview()">View PDF</button>
@@ -290,16 +261,35 @@
             પ્રમાણ"</p>
     </footer>
 
+    <script src="libs/9-2-26_getresult.js"></script>
+    <script src="libs/config.js"></script>
+
+    <script>
+        function openHelp() {
+            document.getElementById('helpModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevents background from scrolling
+        }
+
+        function closeHelpModal() {
+            document.getElementById('helpModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restores background scrolling
+        }
+
+        // Auto-pop the Help image on startup
+        window.addEventListener('DOMContentLoaded', (event) => {
+            setTimeout(openHelp, 1000);
+        });
+    </script>
+
+    <script>
+        function openHelp() { document.getElementById('helpModal').style.display = 'block'; }
+        function openAbout() { document.getElementById('aboutModal').style.display = 'block'; }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 
-
 </html>
-
-
-
-
-
-
-
-
-
